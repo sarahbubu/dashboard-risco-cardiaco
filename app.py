@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
 
 st.title('Dashboard de Risco Cardíaco🫀')
 
@@ -23,3 +24,19 @@ df['Doença'] = df['num'].apply(lambda x: 0 if x == 0 else 1)
 
 st.subheader('Distribuição Simplificada')
 st.write(df['Doença'].value_counts())
+
+
+st.subheader("Distribuição de Doença Cardíaca")
+
+fig, ax = plt.subplots()
+df["Doença"].value_counts().plot(
+    kind="bar",
+    ax=ax,
+    color=["#4CAF50", "#E53935"]  
+)
+
+ax.set_title("Quantidade de Pacientes com e sem Doença Cardíaca")
+ax.set_xlabel("Doença (0 = Não, 1 = Sim)")
+ax.set_ylabel("Quantidade de Pacientes")
+
+st.pyplot(fig)
