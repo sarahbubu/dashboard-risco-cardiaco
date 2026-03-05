@@ -4,7 +4,7 @@ Este projeto é um dashboard interativo desenvolvido em Python para visualizar d
 
 O objetivo é analisar e explorar os dados de forma visual, utilizando gráficos e tabelas para facilitar a interpretação das informações.
 
-## Tecnologias utilizadas
+## Tecnologias 
 
 - Python
 - Streamlit
